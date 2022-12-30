@@ -18,7 +18,9 @@ public class MainController {
 
     @Autowired
     private GameRepository gameRepository;
-@Autowired
+
+    @Autowired
+
     private QuestionRepository questionRepository;
 
     public MainController(GameRepository gameRepository, QuestionRepository questionRepository) {

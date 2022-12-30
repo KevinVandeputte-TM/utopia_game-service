@@ -1,3 +1,4 @@
+/*
 package fact.it.game_service.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -31,3 +32,4 @@ public class SwaggerConfig {
                 .build();
     }
 }
+*/
