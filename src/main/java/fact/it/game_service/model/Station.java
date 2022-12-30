@@ -13,7 +13,7 @@ public class Station {
     private String education;
     private String faculty;
     private String information;
-    @OneToMany(mappedBy = "station")
+    @OneToMany(mappedBy = "station", cascade = CascadeType.ALL)
     private List<Question> questions = new ArrayList<>();
 
 

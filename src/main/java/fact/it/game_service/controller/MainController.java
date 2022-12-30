@@ -1,13 +1,16 @@
 package fact.it.game_service.controller;
 
+import fact.it.game_service.model.GameDTO;
 import fact.it.game_service.model.Question;
 import fact.it.game_service.model.Station;
 import fact.it.game_service.repository.GameRepository;
 import fact.it.game_service.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -17,6 +20,7 @@ public class MainController {
     private GameRepository gameRepository;
 
     @Autowired
+
     private QuestionRepository questionRepository;
 
     public MainController(GameRepository gameRepository, QuestionRepository questionRepository) {
@@ -123,12 +127,13 @@ public class MainController {
 
         }
     }
-        //get all questions
-        @GetMapping("/stations")
-        public List<Station> getAllStations () {
-            return gameRepository.findAll();
-        }
+    //get all questions
 
+        //get all questions
+    @GetMapping("/stations")
+    public List<Station> getAllStations () {
+        return gameRepository.findAll();
+    }
         //Get stationinfo by station ID
         @GetMapping("/station/{stationID}")
         public Station getStation ( @PathVariable int stationID){
@@ -142,66 +147,83 @@ public class MainController {
 
         }
 
-//
-//    //POST: question
-//    @PostMapping("/question")
-//    public Station createQuestion(@RequestBody GameDTO question){
-//
-//
-//        Station peristentQuestion = new Station();
-//        peristentQuestion.setGameId(question.getGameId());
-//        peristentQuestion.setQuestion(question.getQuestion());
-//        peristentQuestion.setLevel(question.getLevel());
-//        peristentQuestion.setX(question.getX());
-//        peristentQuestion.setY(question.getY());
-//        peristentQuestion.setScoreOffensive(question.getScoreOffensive());
-//        peristentQuestion.setScoreDefensive(question.getScoreDefensive());
-//        peristentQuestion.setAnswertwo(question.getAnswertwo());
-//        peristentQuestion.setAnswerthree(question.getAnswerthree());
-//        peristentQuestion.setCorrectanswer(question.getCorrectanswer());
-//        peristentQuestion.setObjectName(question.getObjectName());
-//        gameRepository.save(peristentQuestion);
-//        return peristentQuestion;
-//    }
-//
-//    //PUT:
-//    @PutMapping("/question")
-//    public ResponseEntity<Void> updateQuestion(@RequestBody GameDTO questionDetails) {
-//        Optional<Station> gameFetch = Optional.ofNullable(gameRepository.findGameByGameId(questionDetails.getGameId()));
-//        if (gameFetch.isPresent()) {
-//            Station station = new Station();
-//            station.setQuestion(questionDetails.getQuestion());
-//            station.setLevel(questionDetails.getLevel());
-//            station.setX(questionDetails.getX());
-//            station.setY(questionDetails.getY());
-//            station.setCorrectanswer(questionDetails.getCorrectanswer());
-//            station.setScoreOffensive(questionDetails.getScoreOffensive());
-//            station.setScoreDefensive(questionDetails.getScoreDefensive());
-//            station.setAnswertwo(questionDetails.getAnswertwo());
-//            station.setAnswerthree(questionDetails.getAnswerthree());
-//            station.setObjectName(questionDetails.getObjectName());
-//            gameRepository.save(station);
-//
-//            return ResponseEntity.ok().build();
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-//
-//    //DELETE: question
-//    @DeleteMapping("/question/{number}")
-//    public ResponseEntity<Void> deleteQuestion(@PathVariable int number){
-//        Station q = gameRepository.findGameByGameId(number);
-//
-//        if(q !=null) {
-//            gameRepository.delete(q);
-//            return ResponseEntity.ok().build();
-//        }else{
-//            return ResponseEntity.notFound().build();
-//        }
-//
-//
-//    }
+    //POST: stations
+    @PostMapping("/station")
+    public Station createStation(@RequestBody GameDTO station){
+        Station peristentStation = new Station();
+//        peristentStation.setStationID(station.getStationID());
+        peristentStation.setEducation(station.getEducation());
+        peristentStation.setFaculty(station.getFaculty());
+        peristentStation.setInformation(station.getInformation());
+        gameRepository.save(peristentStation);
+        return peristentStation;
+    }
+    //PUT:
+    @PutMapping("/station")
+    public ResponseEntity<Void> updateStation(@RequestBody GameDTO stationDetails) {
+        Optional<Station> stationFetch = Optional.ofNullable(gameRepository.findStationByStationID(stationDetails.getStationID()));
+        if (stationFetch.isPresent()) {
+            Station station = stationFetch.get();
+            station.setInformation(stationDetails.getInformation());
+            station.setFaculty(stationDetails.getFaculty());
+            station.setEducation(stationDetails.getEducation());
+            gameRepository.save(station);
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    //POST: question
+    @PostMapping("/question")
+    public Question createQuestion(@RequestBody GameDTO question){
+
+        Question peristentQuestion = new Question();
+//        peristentQuestion.setQuestionID(question.getQuestionID());
+        peristentQuestion.setQuestion(question.getQuestion());
+        peristentQuestion.setCorrectanswer(question.getCorrectanswer());
+        peristentQuestion.setfOne(question.getfOne());
+        peristentQuestion.setfTwo(question.getfTwo());
+        peristentQuestion.setfThree(question.getfThree());
+
+        peristentQuestion.setStation(gameRepository.findStationByStationID(question.getStationID()));
+        questionRepository.save(peristentQuestion);
+        return peristentQuestion;
+    }
+
+    //PUT:
+    @PutMapping("/question")
+    public ResponseEntity<Void> updateQuestion(@RequestBody GameDTO questionDetails)
+    {
+        Optional<Question> questionFetch = Optional.ofNullable(questionRepository.findQuestionByQuestionID(questionDetails.getQuestionID()));
+        if (questionFetch.isPresent()) {
+            Question question = questionFetch.get();
+            question.setQuestion(questionDetails.getQuestion());
+            question.setCorrectanswer(questionDetails.getCorrectanswer());
+            question.setfOne(questionDetails.getfOne());
+            question.setfTwo(questionDetails.getfTwo());
+            question.setfThree(questionDetails.getfThree());
+          question.setStation(gameRepository.findStationByStationID(questionDetails.getStationID()));
+            questionRepository.save(question);
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    //DELETE: question
+    @DeleteMapping("/question/{number}")
+    public ResponseEntity<Void> deleteQuestion(@PathVariable int number){
+        Question q = questionRepository.findQuestionByQuestionID(number);
+
+        if(q !=null) {
+            questionRepository.delete(q);
+            return ResponseEntity.ok().build();
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+
+
+    }
 
 
     }
