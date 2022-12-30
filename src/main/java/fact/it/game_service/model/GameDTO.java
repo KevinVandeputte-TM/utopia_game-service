@@ -16,17 +16,96 @@ public class GameDTO {
     private String faculty;
     private String information;
 
-//    @OneToMany(mappedBy = "station")
-//    private List<Question> questions = new ArrayList<>();
 
     //questions
 private int questionID;
     private String question;
-
     private String correctanswer;
     private String       fOne;
     private String       fTwo;
     private String       fThree;
-    private String       fFour;
+
+
+    public int getStationID() {
+        return stationID;
+    }
+
+    public void setStationID(int stationID) {
+        this.stationID = stationID;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setInformation(String information) {
+        this.information = information;
+    }
+
+    public int getQuestionID() {
+        return questionID;
+    }
+
+    public void setQuestionID(int questionID) {
+        this.questionID = questionID;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
+    public String getCorrectanswer() {
+        return correctanswer;
+    }
+
+    public void setCorrectanswer(String correctanswer) {
+        this.correctanswer = correctanswer;
+    }
+
+    public String getfOne() {
+        return fOne;
+    }
+
+    public void setfOne(String fOne) {
+        this.fOne = fOne;
+    }
+
+    public String getfTwo() {
+        return fTwo;
+    }
+
+    public void setfTwo(String fTwo) {
+        this.fTwo = fTwo;
+    }
+
+    public String getfThree() {
+        return fThree;
+    }
+
+    public void setfThree(String fThree) {
+        this.fThree = fThree;
+    }
+
 
 }
+

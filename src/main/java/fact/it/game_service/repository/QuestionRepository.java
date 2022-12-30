@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
-
+Question findQuestionByQuestionID(int id);
 
 }
