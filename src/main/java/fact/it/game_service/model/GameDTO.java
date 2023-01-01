@@ -10,20 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GameDTO {
-//stations
+    //stations
     private int stationID;
     private String education;
     private String faculty;
     private String information;
-
-
     //questions
-private int questionID;
+    private int questionID;
     private String question;
     private String correctanswer;
-    private String       fOne;
-    private String       fTwo;
-    private String       fThree;
+    private String fOne;
+    private String fTwo;
+    private String fThree;
+
+    //Interest
+    private int interestID;
+    private String interestname;
 
 
     public int getStationID() {
@@ -106,6 +108,20 @@ private int questionID;
         this.fThree = fThree;
     }
 
+    public int getInterestID() {
+        return interestID;
+    }
 
+    public void setInterestID(int interestID) {
+        this.interestID = interestID;
+    }
+
+    public String getInterestname() {
+        return interestname;
+    }
+
+    public void setInterestname(String interestname) {
+        this.interestname = interestname;
+    }
 }
 
