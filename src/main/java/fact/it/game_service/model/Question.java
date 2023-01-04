@@ -6,7 +6,6 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @Entity
 public class Question implements Serializable {
     @Id

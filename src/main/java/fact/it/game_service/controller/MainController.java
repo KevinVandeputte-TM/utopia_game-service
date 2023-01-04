@@ -65,7 +65,7 @@ public class MainController {
             String faculty = "Thomas More Geel";
 
             Station s1 = new Station();
-            s1.setEducation("Human Resources");;
+            s1.setEducation("Human Resources");
             s1.addInterest(allinterests.get(0));
             s1.setInformation(info);
             s1.setFaculty(faculty);
@@ -335,11 +335,15 @@ public class MainController {
         return stationRepository.findStationByStationID(stationID);
     }
 
+    @GetMapping("/question/{questionID}")
+    public Question question (@PathVariable int questionID) {
+        return questionRepository.findQuestionByQuestionID(questionID);
+    }
+
     //Get questions by stationID
     @GetMapping("/questions/{stationID}")
     public List<Question> getAllQuestions ( @PathVariable int stationID){
         return stationRepository.findStationByStationID(stationID).getQuestions();
-
     }
 
     @GetMapping("/interests")
