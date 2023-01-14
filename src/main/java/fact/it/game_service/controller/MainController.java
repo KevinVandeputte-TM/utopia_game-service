@@ -325,38 +325,41 @@ public class MainController {
     /* --- ENDPOINTS --- */
 
     //get all questions
+     @CrossOrigin
     @GetMapping("/stations")
     public List<Station> getAllStations () {
         return stationRepository.findAll();
     }
     //Get stationinfo by station ID
+     @CrossOrigin
     @GetMapping("/station/{stationID}")
     public Station getStation ( @PathVariable int stationID){
         return stationRepository.findStationByStationID(stationID);
     }
-
+ @CrossOrigin
     @GetMapping("/question/{questionID}")
     public Question question (@PathVariable int questionID) {
         return questionRepository.findQuestionByQuestionID(questionID);
     }
-
+ @CrossOrigin
     //Get questions by stationID
     @GetMapping("/questions/{stationID}")
     public List<Question> getAllQuestions ( @PathVariable int stationID){
         return stationRepository.findStationByStationID(stationID).getQuestions();
     }
-
+ @CrossOrigin
     @GetMapping("/interests")
     public List<Interest> getAllInterests(){
         return interestRepository.findAll();
     }
-
+ @CrossOrigin
     @GetMapping("/interests/{interestID}")
     public Interest getInterest(@PathVariable int interestID){
         return interestRepository.findInterestByInterestID(interestID);
     }
 
     //POST: stations
+    
     @PostMapping("/station")
     public Station createStation(@RequestBody GameDTO station){
         Station peristentStation = new Station();
