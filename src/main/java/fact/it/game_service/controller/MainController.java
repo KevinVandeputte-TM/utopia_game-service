@@ -67,6 +67,7 @@ public class MainController {
             String faculty = "Thomas More Geel";
 
             Station s1 = new Station();
+             s1.setStationID(1000);
             s1.setEducation("Human Resources");
             s1.addInterest(allinterests.get(0));
             s1.setInformation(info);
@@ -267,6 +268,7 @@ public class MainController {
 
             /* --- ADD QUESTIONS --- */
             Question q1 = new Question();
+            q.setQuestionID(2000);
             q1.setQuestion("Hoeveel procent van de HR studenten vindt werk voor ze afstuderen?");
             q1.setCorrectanswer("75%");
             q1.setfOne("50%");
