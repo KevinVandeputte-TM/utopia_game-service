@@ -268,7 +268,7 @@ public class MainController {
 
             /* --- ADD QUESTIONS --- */
             Question q1 = new Question();
-            q.setQuestionID(2000);
+            q1.setQuestionID(2000);
             q1.setQuestion("Hoeveel procent van de HR studenten vindt werk voor ze afstuderen?");
             q1.setCorrectanswer("75%");
             q1.setfOne("50%");
