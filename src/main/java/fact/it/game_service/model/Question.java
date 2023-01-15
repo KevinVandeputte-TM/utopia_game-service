@@ -9,7 +9,10 @@ import java.io.Serializable;
 @Entity
 public class Question implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+           @SequenceGenerator(name = "question_seq", 
+        sequenceName = "question_sequence", 
+        initialValue = 2000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_seq")
     private int questionID;
     private String question;
     private String correctanswer;
