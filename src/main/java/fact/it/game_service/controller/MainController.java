@@ -55,6 +55,8 @@ public class MainController {
             interestRepository.save(i7);
             Interest i8 = new Interest(8, "Tech & IT");
             interestRepository.save(i8);
+            Interest i9 = new Interest(9, "Geen");
+            interestRepository.save(i9);
 
             // CREATE STATIONS
             List<Interest> allinterests = interestRepository.findAll();
