@@ -12,8 +12,16 @@ import java.util.List;
 
 @Entity
 public class Station {
+    
+
+
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+        @SequenceGenerator(name = "station_seq", 
+        sequenceName = "station_sequence", 
+        initialValue = 1000, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "station_seq")
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int stationID;
     private String education;
     private String faculty;
