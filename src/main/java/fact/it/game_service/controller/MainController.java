@@ -165,7 +165,7 @@ public class MainController {
             stationRepository.save(s14);
 
             Station s15 = new Station();
-            s15.setEducation("Toegepast Psychologie");
+            s15.setEducation("Toegepaste Psychologie");
             s15.addInterest(i6);
             s15.setInformation(info);
             s15.setFaculty(faculty);
@@ -228,7 +228,7 @@ public class MainController {
             stationRepository.save(s23);
 
             Station s24 = new Station();
-            s24.setEducation("Ontwerp en Prooductietechnologie");
+            s24.setEducation("Ontwerp en Productietechnologie");
             s24.addInterest(i8);
             s24.setInformation(info);
             s24.setFaculty(faculty);
@@ -319,6 +319,51 @@ public class MainController {
             q6.setfThree("F3");
             q6.setStation(stations.get(3));
             questionRepository.save(q6);
+
+            Question q7 = new Question();
+            q6.setQuestion("Welke trui mag de wereldkampioen wielrennen dragen?");
+            q6.setCorrectanswer("Regenboog trui");
+            q6.setfOne("Gele trui");
+            q6.setfTwo("Bolletjes trui");
+            q6.setfThree("Groene trui");
+            q6.setStation(stations.get(9));
+            questionRepository.save(q7);
+
+            Question q8 = new Question();
+            q6.setQuestion("Wat is het oudste tennistoernooi ter wereld?");
+            q6.setCorrectanswer("Wimbledon");
+            q6.setfOne("Australian Open");
+            q6.setfTwo("US Open");
+            q6.setfThree("Roland Garos");
+            q6.setStation(stations.get(9));
+            questionRepository.save(q8);
+
+            Question q9 = new Question();
+            q6.setQuestion("Welk(e) land/landen organiseert in 2024 de Olympische Spelen?");
+            q6.setCorrectanswer("Frankrijk");
+            q6.setfOne("Duitsland & Denemarken");
+            q6.setfTwo("USA (Los Angeles)");
+            q6.setfThree("Spanje & Portugal");
+            q6.setStation(stations.get(9));
+            questionRepository.save(q9);
+
+            Question q10 = new Question();
+            q6.setQuestion(" Welke stelling klopt? Als je afstudeert als leerkracht lager onderwijs dan :");
+            q6.setCorrectanswer("Kan je ook zorgleerkracht worden");
+            q6.setfOne("Kan je enkel klasleraar worden in een leerjaar");
+            q6.setfTwo("Kan je enkel terecht in het onderwijs");
+            q6.setfThree("Kan je enkel buiten het onderwijs terecht indien je nog een extra bachelor na bachelor opleiding volgt");
+            q6.setStation(stations.get(7));
+            questionRepository.save(q10);
+
+            Question q11 = new Question();
+            q6.setQuestion("  Als leerkracht lager onderwijs ben je:");
+            q6.setCorrectanswer("sociaal en communicatief");
+            q6.setfOne("vooral sterk in administratieve taken");
+            q6.setfTwo("Gericht op een specifiek kennisgebied");
+            q6.setfThree("vooral theoretisch ingesteld");
+            q6.setStation(stations.get(7));
+            questionRepository.save(q11);
 
         }
     }
