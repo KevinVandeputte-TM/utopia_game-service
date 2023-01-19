@@ -321,48 +321,48 @@ public class MainController {
             questionRepository.save(q6);
 
             Question q7 = new Question();
-            q6.setQuestion("Welke trui mag de wereldkampioen wielrennen dragen?");
-            q6.setCorrectanswer("Regenboog trui");
-            q6.setfOne("Gele trui");
-            q6.setfTwo("Bolletjes trui");
-            q6.setfThree("Groene trui");
-            q6.setStation(stations.get(9));
+            q7.setQuestion("Welke trui mag de wereldkampioen wielrennen dragen?");
+            q7.setCorrectanswer("Regenboog trui");
+            q7.setfOne("Gele trui");
+            q7.setfTwo("Bolletjes trui");
+            q7.setfThree("Groene trui");
+            q7.setStation(stations.get(9));
             questionRepository.save(q7);
 
             Question q8 = new Question();
-            q6.setQuestion("Wat is het oudste tennistoernooi ter wereld?");
-            q6.setCorrectanswer("Wimbledon");
-            q6.setfOne("Australian Open");
-            q6.setfTwo("US Open");
-            q6.setfThree("Roland Garos");
-            q6.setStation(stations.get(9));
+            q8.setQuestion("Wat is het oudste tennistoernooi ter wereld?");
+            q8.setCorrectanswer("Wimbledon");
+            q8.setfOne("Australian Open");
+            q8.setfTwo("US Open");
+            q8.setfThree("Roland Garos");
+            q8.setStation(stations.get(9));
             questionRepository.save(q8);
 
             Question q9 = new Question();
-            q6.setQuestion("Welk(e) land/landen organiseert in 2024 de Olympische Spelen?");
-            q6.setCorrectanswer("Frankrijk");
-            q6.setfOne("Duitsland & Denemarken");
-            q6.setfTwo("USA (Los Angeles)");
-            q6.setfThree("Spanje & Portugal");
-            q6.setStation(stations.get(9));
+            q9.setQuestion("Welk(e) land/landen organiseert in 2024 de Olympische Spelen?");
+            q9.setCorrectanswer("Frankrijk");
+            q9.setfOne("Duitsland & Denemarken");
+            q9.setfTwo("USA (Los Angeles)");
+            q9.setfThree("Spanje & Portugal");
+            q9.setStation(stations.get(9));
             questionRepository.save(q9);
 
             Question q10 = new Question();
-            q6.setQuestion(" Welke stelling klopt? Als je afstudeert als leerkracht lager onderwijs dan :");
-            q6.setCorrectanswer("Kan je ook zorgleerkracht worden");
-            q6.setfOne("Kan je enkel klasleraar worden in een leerjaar");
-            q6.setfTwo("Kan je enkel terecht in het onderwijs");
-            q6.setfThree("Kan je enkel buiten het onderwijs terecht indien je nog een extra bachelor na bachelor opleiding volgt");
-            q6.setStation(stations.get(7));
+            q10.setQuestion(" Welke stelling klopt? Als je afstudeert als leerkracht lager onderwijs dan :");
+            q10.setCorrectanswer("Kan je ook zorgleerkracht worden");
+            q10.setfOne("Kan je enkel klasleraar worden in een leerjaar");
+            q10.setfTwo("Kan je enkel terecht in het onderwijs");
+            q10.setfThree("Kan je enkel buiten het onderwijs terecht indien je nog een extra bachelor na bachelor opleiding volgt");
+            q10.setStation(stations.get(7));
             questionRepository.save(q10);
 
             Question q11 = new Question();
-            q6.setQuestion("  Als leerkracht lager onderwijs ben je:");
-            q6.setCorrectanswer("sociaal en communicatief");
-            q6.setfOne("vooral sterk in administratieve taken");
-            q6.setfTwo("Gericht op een specifiek kennisgebied");
-            q6.setfThree("vooral theoretisch ingesteld");
-            q6.setStation(stations.get(7));
+            q11.setQuestion("  Als leerkracht lager onderwijs ben je:");
+            q11.setCorrectanswer("sociaal en communicatief");
+            q11.setfOne("vooral sterk in administratieve taken");
+            q11.setfTwo("Gericht op een specifiek kennisgebied");
+            q11.setfThree("vooral theoretisch ingesteld");
+            q11.setStation(stations.get(7));
             questionRepository.save(q11);
 
         }
